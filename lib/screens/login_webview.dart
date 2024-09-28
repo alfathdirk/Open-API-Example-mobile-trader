@@ -27,7 +27,7 @@ class _LoginWebViewState extends State<LoginWebView> {
     final Map<String, String> params = <String, String>{
       'product': 'mobile',
       'client_id': appState.clientID,
-      'redirect_uri': 'https://login.confirm',
+      'redirect_uri': appState.callbackURL,
       'scope': 'trading',
     };
     final Uri url = Uri.https(

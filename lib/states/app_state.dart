@@ -31,6 +31,7 @@ class AppState extends ChangeNotifier {
   late final String socketLiveURL;
   late final String clientID;
   late final String clientSecret;
+  late final String callbackURL;
 
   Future<void> loadConfigs(String from) async {
     final String jsonStr = await rootBundle.loadString(from);
@@ -39,6 +40,7 @@ class AppState extends ChangeNotifier {
     clientID = json['id'] as String;
     clientSecret = json['secret'] as String;
     remoteURL = json['url'] as String;
+    callbackURL = json['callback_url'] as String;
     loginURL = json['login_url'] as String;
     socketDemoURL = json['socket_demo'] as String;
     socketLiveURL = json['socket_live'] as String;
